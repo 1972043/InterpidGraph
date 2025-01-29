@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntrepidBird | IntrepidGraph</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/graph_fav.png" type="image/x-icon">
+
+</head>
+<body >
+    <!-- Header Section -->
+    <header class="bg-dark text-white text-center p-4">
+        <img src="images/graph_fav.png" width="50" height="50">
+        <h1>Kalkulator Grafik Matematika</h1>
+    </header>
+    
+    <!-- Calculator Section -->
+    <section id="calculator" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-3">Buat Grafik Persamaan Anda</h2>
+                <form id="calculatorForm">
+                    <div class="form-group">
+                        <label for="equations">Masukkan persamaannya (pisahkan dengan tanda koma):</label>
+                        <input type="text" class="form-control" id="equations" placeholder="e.g., y = x^2, y = sin(x)" required>
+                        <small class="form-text text-muted">Fungsi yang didukung: sin, cos, tan, sqrt, log</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="minX">Min X:</label>
+                        <input type="number" class="form-control" id="minX" value="-10">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxX">Max X:</label>
+                        <input type="number" class="form-control" id="maxX" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="minY">Min Y:</label>
+                        <input type="number" class="form-control" id="minY" value="-10">
+                    </div>
+                    <div class="form-group">
+                        <label for="maxY">Max Y:</label>
+                        <input type="number" class="form-control" id="maxY" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="graphType">Tipe Grafik:</label>
+                        <select class="form-control" id="graphType">
+                            <option value="line">Line Chart</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Graph</button>
+
+                    <!-- Zoom Buttons -->
+                    <div class="form-group">
+                        <button type="button" class="btn btn-warning btn-block" id="zoomInBtn">Zoom In</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-warning btn-block" id="zoomOutBtn">Zoom Out</button>
+                    </div>
+
+                    <!-- Reset Buttons -->
+                    <div class="reset-container">
+                        <button type="reset" class="btn btn-outline-secondary">Reset Persamaan</button>
+                        <button type="button" class="btn btn-info" id="resetBtn">Reset Grafik</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-4 graphic-container">
+            <div class="col-md-12">
+                <canvas id="graph" class="w-100"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Calculator JS -->
+    <script src="calculator.js"></script>
+    
+</body>
+</html>
