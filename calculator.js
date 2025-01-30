@@ -115,18 +115,6 @@ $(document).ready(function() {
                     axis: 'xy',
                     intersect: false
                 },
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                // Round the X and Y values for display
-                                let xLabel = Math.round(context.parsed.x);
-                                let yLabel = Math.round(context.parsed.y);
-                                return `x: ${xLabel}, y: ${yLabel}`;
-                            }
-                        }
-                    }
-                }
             }
         });
 
